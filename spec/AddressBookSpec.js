@@ -9,4 +9,14 @@ describe("Address Book", function() {
   }
 
 )
+
+  it("should be able to delete contacts", function() {
+    var addressBook = new AddressBook();
+    var thisContact = new Contact();
+
+    addressBook.addContact(thisContact);
+    addressBook.deleteContact(0);
+
+    expect(addressBook.getContact(0)).not.toBeDefined();
+  });
 });
